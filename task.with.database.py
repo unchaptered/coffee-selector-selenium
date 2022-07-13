@@ -16,8 +16,6 @@ driver.get('https://www.nespresso.com/kr/ko/grands-crus-coffee-range#!/by-range'
 
 card_group = driver.find_elements(By.CSS_SELECTOR, '#coffee-selector > div > div > div > ul > li')
 
-# try:
-
 capsule_list = []
 for card_vertical in card_group:
 
@@ -41,6 +39,3 @@ for card_vertical in card_group:
                     })
 
 database[COLLECTION_CAPSULE].insert_many(capsule_list)
-
-# except:
-#     print('에러')
